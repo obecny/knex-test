@@ -1,0 +1,56 @@
+{
+  "name": "opentelemetry-instrumentation-knex-example",
+  "private": true,
+  "version": "0.11.0",
+  "description": "Example of using @opentelemetry/instrumentation-knex with OpenTelemetry",
+  "main": "index.js",
+  "scripts": {
+    "docker:start": "cd ./docker && docker-compose down && docker-compose up -d",
+    "docker:rebuild": "cd ./docker && docker-compose down && docker-compose build",
+    "docker:stop": "cd ./docker && docker-compose down",
+    "migrate": "yarn knex migrate:latest",
+    "postinstall": "npm run migrate",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/open-telemetry/opentelemetry-js.git"
+  },
+  "keywords": [
+    "opentelemetry",
+    "http",
+    "tracing",
+    "knex"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "author": "OpenTelemetry Authors",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/open-telemetry/opentelemetry-js/issues"
+  },
+  "dependencies": {
+    "@opentelemetry/api": "^0.12.0",
+    "@opentelemetry/core": "^0.12.0",
+    "@opentelemetry/exporter-collector": "^0.12.0",
+    "@opentelemetry/node": "^0.12.0",
+    "@opentelemetry/tracing": "^0.12.0",
+    "@opentelemetry/koa-instrumentation": "^0.11.0",
+    "@opentelemetry/plugin-pg-pool": "0.11.0",
+    "@opentelemetry/plugin-pg": "0.11.0",
+    "@opentelemetry/plugin-http": "^0.12.0",
+    "@opentelemetry/plugin-https": "^0.12.0",
+    "koa": "^2.5.3",
+    "koa-body": "^4.0.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-logger": "^3.2.1",
+    "koa-compose": "^4.0.0",
+    "koa-jwt": "^3.5.1",
+    "koa-router": "^10.0.0",
+    "knex": "^0.21.12",
+    "objection": "^2.2.1",
+    "pg": "^8.3.0"
+  },
+  "homepage": "https://github.com/open-telemetry/opentelemetry-js#readme"
+}

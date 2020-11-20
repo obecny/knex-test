@@ -1,0 +1,16 @@
+node_modules
+dist
+.npm
+.eslintcache
+.env
+yarn.lock
+package-lock.json
+.nyc_output
+.DS_Store
+.vscode
+.idea
+*.iml
+files
+.*.env
+*.env
+
